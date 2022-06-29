@@ -91,7 +91,7 @@
 		},
 		"3e0aab31-a8f2-48ec-bc22-f8c406142309": {
 			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
-			"destination": "SFSF_New_Demo",
+			"destination": "SF_SFCPART000674_API_OAuth",
 			"path": "/odata/v2/User(${context.UserId})",
 			"httpMethod": "GET",
 			"responseVariable": "${context.response.CInfo}",

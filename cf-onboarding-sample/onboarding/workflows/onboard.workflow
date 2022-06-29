@@ -201,7 +201,7 @@
 		},
 		"f9cf3524-7ac5-4f1e-8b34-509537875729": {
 			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
-			"destination": "BUSINESS_RULES",
+			"destination": "WM_BUSINESSRULES",
 			"path": "/rest/v2/workingset-rule-services",
 			"httpMethod": "POST",
 			"requestVariable": "${context.rulesPayload}",
@@ -224,7 +224,7 @@
 		},
 		"e7d6fdf5-19c1-42f9-a526-3917c2ac80a9": {
 			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
-			"destination": "BUSINESS_RULES",
+			"destination": "WM_BUSINESSRULES",
 			"path": "/rest/v2/workingset-rule-services",
 			"httpMethod": "POST",
 			"requestVariable": "${context.rulesPayloadtotal}",
