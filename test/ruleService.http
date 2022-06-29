@@ -1,0 +1,60 @@
+
+@clientid= sb-clone-4f071d59-6a8e-4178-836d-4a8f18bdbaac!b4150|bpmrulebroker!b2018
+@clientsecret=47c8d035-39f7-4f4a-bdef-3e19cc017e0a$C3K0n1-VAhYMIpZ2cWCv-iYoCi9-dE6-e9isYp2KC_A=
+@rule_runtime_url=https://bpmruleruntime.rule.cfapps.us10.hana.ondemand.com
+@uaa_url=https://riz-innovation.authentication.us10.hana.ondemand.com
+
+
+# OAUTH 2.0 Client Credentials
+# @name SF_Bearer_Token_Request
+POST {{uaa_url}}/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={{clientid}}
+&client_secret={{clientsecret}}
+
+
+####
+POST https://bpmruleruntime.rule.cfapps.us10.hana.ondemand.com/rules-service/rest/v2/workingset-rule-services
+Authorization: Bearer {{SF_Bearer_Token_Request.response.body.access_token}}
+Content-Type: application/json
+
+{
+  "RuleServiceId": "6bbd196d50c14b918d04c181e78d3a5b",
+  "Vocabulary": [
+    {
+      "Employee": {
+        "id": "LORIN",
+        "name": "John",
+        "age": "32",
+        "countryOfCompany":"USA",
+        "company" :"ACE",
+        "jobDepartment":"PS"
+      }
+    }
+  ]
+}
+
+####
+
+POST https://bpmruleruntime.rule.cfapps.us10.hana.ondemand.com/rules-service/rest/v2/workingset-rule-services
+Authorization: Bearer {{SF_Bearer_Token_Request.response.body.access_token}}
+Content-Type: application/json
+
+{
+  "RuleServiceId": "212cb8521df94b419d50c05023e23c1d",
+  "Vocabulary": [
+    {
+      "Employee": {
+        "id": "LORIN",
+        "name": "John",
+        "age": "32",
+        "countryOfCompany":"USA",
+        "company" :"ACE",
+        "jobDepartment":"PS"
+      }
+    }
+  ]
+}
+
