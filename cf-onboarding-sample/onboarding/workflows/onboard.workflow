@@ -131,7 +131,7 @@
 		},
 		"279de180-6739-4615-b4b4-254005ef4f2b": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "Confirm or Change Equipment for ${context.CInfo.d.results[0].fName} ${context.CInfo.d.results[0].lName}",
+			"subject": "Confirm or Change Equipment for ${context.CInfo.d.firstName} ${context.CInfo.d.lastName}",
 			"description": "The buddy assigns appropriate equipment to the new hire",
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
@@ -152,7 +152,7 @@
 		},
 		"c3176c60-9c77-43ef-8273-dd6b919ff1db": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "Approve Equipment for ${context.CInfo.d.results[0].fName} ${context.CInfo.d.results[0].lName}",
+			"subject": "Approve Equipment for ${context.CInfo.d.firstName} ${context.CInfo.d.lastName}",
 			"description": "The manager approves the equipment list proposed by the buddy",
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
@@ -173,7 +173,7 @@
 		},
 		"8d59f760-8a8b-45cd-9591-2d05d71d7d12": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "Accept Workplace for ${context.CInfo.d.results[0].fName} ${context.CInfo.d.results[0].lName}",
+			"subject": "Accept Workplace for ${context.CInfo.d.firstName} ${context.CInfo.d.lastName}",
 			"description": "The buddy should confirm that the workplace & equipments are ready before the new hire joins the organization.",
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
