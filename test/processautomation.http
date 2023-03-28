@@ -1,0 +1,46 @@
+
+
+@clientid=sb-0ffc7578-b5a2-41ab-8fe6-42105ee21e25!b131856|xsuaa!b120249
+@clientsecret=96bdbaf1-4899-41b4-89dc-8db4090128eb$ykf4q-lgqU4FeArhdUyT0Bf-__WB6QiFIeYAGiT0iUQ=
+@proc_aut_api_url=https://spa-api-gateway-bpi-eu-prod.cfapps.eu10.hana.ondemand.com
+@uaa_url=https://riz-innovation-payg.authentication.eu10.hana.ondemand.com
+
+
+# OAUTH 2.0 Client Credentials
+# @name SF_Bearer_Token_Request
+POST {{uaa_url}}/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={{clientid}}
+&client_secret={{clientsecret}}
+
+####
+GET {{proc_aut_api_url}}/workflow/rest/v1/workflow-instances
+Authorization: Bearer {{SF_Bearer_Token_Request.response.body.access_token}}
+
+
+####
+POST {{proc_aut_api_url}}/workflow/rest/v1/workflow-instances
+Authorization: Bearer {{SF_Bearer_Token_Request.response.body.access_token}}
+Content-Type: application/json
+## APIKey: 0CRi4Wjl8mUUQ3Q9sbQwvV0FloWLSleW
+
+{
+    "definitionId": "eu10.riz-innovation-payg.salesordersmanagementapi.orderProcessing",
+    "context": {
+        "salesorderdetails": {
+            "material": "123",
+            "orderAmount": 101,
+            "shipToParty": "SAP",
+            "salesOrderType": "TEST",
+            "salesOrganisation": "NHAN",
+            "distributionChannel": "01",
+            "shippingCountry": "USA",
+            "expectedDeliveryDate": "2023-05-08",
+            "division": "01"
+            }
+    }
+}
+
+####
